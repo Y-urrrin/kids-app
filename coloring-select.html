@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ぬりえをえらぶ</title>
+  <link rel="stylesheet" href="coloring-select.css">
+</head>
+<body>
+  <main class="coloring-select-app">
+    <header class="select-header">
+      <button class="home-button" id="homeButton">🏠 <span>ホーム</span></button>
+      <div class="title-area">
+  <h1>
+  <img
+    src="images/coloring/crayon.png"
+    alt=""
+    class="title-crayon">
+  ぬりえ
+  </h1>
+        <p>ぬりたい えを えらんでね！</p>
+      </div>
+      <div class="sun" aria-hidden="true">☀️</div>
+    </header>
+
+    <section class="gallery-wrap" aria-label="ぬりえ一覧">
+      <button class="page-button prev" id="prevButton" aria-label="前のページ">‹</button>
+      <div class="gallery" id="gallery"></div>
+      <button class="page-button next" id="nextButton" aria-label="次のページ">›</button>
+    </section>
+
+    <div class="page-dots" id="pageDots" aria-label="ページ位置"></div>
+  </main>
+
+  <div class="rotate-message">
+    <div><p>📱 ↻</p><strong>よこむきにしてね♪</strong></div>
+  </div>
+
+  <script src="coloring-select.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>ぬりえ</title>
+
+  <link
+    rel="stylesheet"
+    href="coloring.css"
+  >
+</head>
+
+
+<body>
+
+  <main class="coloring-app">
+
+
+    <!-- =====================
+         上部
+    ====================== -->
+
+    <header class="coloring-header">
+
+      <!-- 戻る -->
+      <button
+        class="back-button"
+        id="backButton"
+      >
+        ◀ もどる
+      </button>
+
+
+      <!-- タイトル -->
+      <div class="coloring-title">
+
+        <img
+          src="images/coloring/crayon.png"
+          alt=""
+        >
+
+        <h1>ぬりえ</h1>
+
+      </div>
+
+
+      <!-- 全部消す -->
+      <button
+        class="clear-button"
+        id="clearButton"
+      >
+        ↻ やりなおす
+      </button>
+
+    </header>
+
+
+
+    <!-- =====================
+         メイン
+    ====================== -->
+
+    <section class="coloring-main">
+
+
+      <!-- =====================
+           左：パレット
+      ====================== -->
+
+      <aside class="tool-panel">
+
+
+        <h2>いろ</h2>
+
+
+        <!-- 色 -->
+        <div class="color-palette">
+
+          <button
+            class="color-button active"
+            data-color="#ff6b81"
+            style="--color:#ff6b81"
+            aria-label="あか"
+          ></button>
+
+          <button
+            class="color-button"
+            data-color="#ff9f43"
+            style="--color:#ff9f43"
+            aria-label="オレンジ"
+          ></button>
+
+          <button
+            class="color-button"
+            data-color="#ffd93d"
+            style="--color:#ffd93d"
+            aria-label="きいろ"
+          ></button>
+
+          <button
+            class="color-button"
+            data-color="#6bcb77"
+            style="--color:#6bcb77"
+            aria-label="みどり"
+          ></button>
+
+          <button
+            class="color-button"
+            data-color="#4d96ff"
+            style="--color:#4d96ff"
+            aria-label="あお"
+          ></button>
+
+          <button
+            class="color-button"
+            data-color="#845ec2"
+            style="--color:#845ec2"
+            aria-label="むらさき"
+          ></button>
+
+          <button
+            class="color-button"
+            data-color="#ff9ff3"
+            style="--color:#ff9ff3"
+            aria-label="ピンク"
+          ></button>
+
+          <button
+            class="color-button"
+            data-color="#8d6e63"
+            style="--color:#8d6e63"
+            aria-label="ちゃいろ"
+          ></button>
+
+          <button
+            class="color-button"
+            data-color="#555555"
+            style="--color:#555555"
+            aria-label="くろ"
+          ></button>
+
+        </div>
+
+
+
+        <!-- 太さ -->
+
+        <h2 class="size-title">
+          ふとさ
+        </h2>
+
+
+        <div class="brush-sizes">
+
+          <button
+            class="size-button"
+            data-size="10"
+          >
+            <span class="size-dot small"></span>
+          </button>
+
+
+          <button
+            class="size-button active"
+            data-size="25"
+          >
+            <span class="size-dot medium"></span>
+          </button>
+
+
+          <button
+            class="size-button"
+            data-size="45"
+          >
+            <span class="size-dot large"></span>
+          </button>
+
+        </div>
+
+
+
+        <!-- 消しゴム -->
+
+        <button
+          class="eraser-button"
+          id="eraserButton"
+        >
+          ◻ けしゴム
+        </button>
+
+
+      </aside>
+
+
+
+      <!-- =====================
+           右：ぬりえ
+      ====================== -->
+
+      <div class="canvas-area">
+
+
+        <div class="paper">
+
+          <!-- 実際に色を描くCanvas -->
+          <canvas
+            id="drawingCanvas"
+          ></canvas>
+
+
+          <!-- 線画 -->
+          <img
+            id="coloringImage"
+            class="coloring-line"
+            alt="ぬりえ"
+          >
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- 縦画面 -->
+
+  <div class="rotate-message">
+
+    <div>
+
+      <p>📱 ↻</p>
+
+      <strong>
+        よこむきにしてね♪
+      </strong>
+
+    </div>
+
+  </div>
+<script src="coloring.js"></script>
+
+</body>
+
+</html>

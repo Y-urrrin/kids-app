@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>アイウエオ表</title>
+
+  <link rel="stylesheet" href="hiragana.css">
+</head>
+
+<body>
+
+<main class="app">
+
+  <!-- =========================
+       上部
+  ========================== -->
+
+  <header class="header">
+
+    <button class="home-button" id="homeButton">
+      <span class="home-icon">⌂</span>
+      <span>ホーム</span>
+    </button>
+
+    <div class="title-box">
+      <span class="title-star">⭐</span>
+      <h1>アイウエオ表</h1>
+    </div>
+
+    <button class="sound-all-button" id="soundAllButton">
+      🔊
+      <span>すべての音をきく</span>
+    </button>
+
+  </header>
+
+  <!-- =========================
+       あいうえお表
+  ========================== -->
+
+  <section class="hiragana-grid">
+
+
+    <!-- あ行 -->
+
+    <button class="hiragana-block row-a"
+       data-audio="audio/a.m4a">
+
+
+      <span class="kana">あ</span>
+
+      <div class="item">
+        <img class="picture-image" src="images/hiragana/ahiru.png" alt="あひる">
+        <span class="word">あひる</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-a"
+            data-audio="audio/i.m4a">
+
+      <span class="kana">い</span>
+
+      <div class="item">
+        <img class="picture-image" src="images/hiragana/ichigo.png" alt="いちご">
+        <span class="word">いちご</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-a"
+            data-audio="audio/u.m4a">
+
+      <span class="kana">う</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/usagi.png" alt="うさぎ">
+        <span class="word">うさぎ</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-a"
+            data-audio="audio/e.m4a">
+
+      <span class="kana">え</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/ehon.png" alt="えほん">
+        <span class="word">えほん</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-a"
+            data-audio="audio/o.m4a">
+
+      <span class="kana">お</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/onigiri.png" alt="おにぎり">
+        <span class="word">おにぎり</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <!-- =====================
+         か行
+    ====================== -->
+
+    <button class="hiragana-block row-ka"
+            data-audio="audio/ka.m4a">
+
+      <span class="kana">か</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/kaeru.png" alt="かえる">
+        <span class="word">かえる</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-ka"
+            data-audio="audio/ki.m4a">
+
+      <span class="kana">き</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/kirin.png" alt="きりん">
+        <span class="word">きりん</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-ka"
+            data-audio="audio/ku.m4a">
+
+      <span class="kana">く</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/kuruma.png" alt="くるま">
+        <span class="word">くるま</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-ka"
+            data-audio="audio/ke.m4a">
+
+      <span class="kana">け</span>
+
+      <div class="item">
+        <img class="picture-image" src="images/hiragana/keeki.png" alt="けーき">
+        <span class="word">けーき</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-ka"
+            data-audio="audio/ko.m4a">
+
+      <span class="kana">こ</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/koala.png" alt="こあら">
+        <span class="word">こあら</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <!-- =====================
+         さ行
+    ====================== -->
+
+    <button class="hiragana-block row-sa"
+            data-audio="audio/sa.m4a">
+
+      <span class="kana">さ</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/sakana.png" alt="さかな">
+        <span class="word">さかな</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-sa"
+            data-audio="audio/shi.m4a">
+
+      <span class="kana">し</span>
+
+      <div class="item">
+        <img class="picture-image" src="images/hiragana/shika.png" alt="しか">
+        <span class="word long-word">しか</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-sa"
+            data-audio="audio/su.m4a">
+
+      <span class="kana">す</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/suika.png" alt="すいか">
+        <span class="word">すいか</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-sa"
+            data-audio="audio/se.m4a">
+
+      <span class="kana">せ</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/semi.png" alt="せみ">
+        <span class="word">せみ</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-sa"
+            data-audio="audio/so.m4a">
+
+      <span class="kana">そ</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/soba.png" alt="そば">
+        <span class="word long-word">そば</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <!-- =====================
+         た行
+    ====================== -->
+
+    <button class="hiragana-block row-ta"
+            data-audio="audio/ta.m4a">
+
+      <span class="kana">た</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/tako.png" alt="たこ">
+        <span class="word">たこ</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-ta"
+            data-audio="audio/ti.m4a">
+
+      <span class="kana">ち</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/cho.png" alt="ちょうちょ">
+        <span class="word long-word">ちょうちょ</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-ta"
+            data-audio="audio/tu.m4a">
+
+      <span class="kana">つ</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/tsumiki.png" alt="つみき">
+        <span class="word">つみき</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-ta"
+            data-audio="audio/te.m4a">
+
+      <span class="kana">て</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/tegami.png" alt="てがみ">
+        <span class="word long-word">てがみ</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-ta"
+            data-audio="audio/to.m4a">
+
+      <span class="kana">と</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/tora.png" alt="とら">
+        <span class="word">とら</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <!-- =====================
+         な行
+    ====================== -->
+
+    <button class="hiragana-block row-na"
+            data-audio="audio/na.m4a">
+
+      <span class="kana">な</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/nasu.png" alt="なす">
+        <span class="word">なす</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-na"
+            data-audio="audio/ni.m4a">
+
+      <span class="kana">に</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/ninjin.png" alt="にんじん">
+        <span class="word">にんじん</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-na"
+            data-audio="audio/nu.m4a">
+
+      <span class="kana">ぬ</span>
+
+      <div class="item">
+        <img class="picture-image" src="images/hiragana/nuigurumi.png" alt="ぬいぐるみ">
+        <span class="word long-word">ぬいぐるみ</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-na"
+            data-audio="audio/ne.m4a">
+
+      <span class="kana">ね</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/neko.png" alt="ねこ">
+        <span class="word">ねこ</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+    <button class="hiragana-block row-na"
+            data-audio="audio/no.m4a">
+
+      <span class="kana">の</span>
+
+      <div class="item">
+         <img class="picture-image" src="images/hiragana/noto.png" alt="のーと">
+        <span class="word">のーと</span>
+      </div>
+
+      <span class="speaker">🔊</span>
+
+    </button>
+
+
+  <!-- =====================
+     は行
+====================== -->
+
+<button class="hiragana-block row-ha"
+        data-audio="audio/ha.m4a">
+
+  <span class="kana">は</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/hana.png"
+         alt="はな">
+    <span class="word">はな</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ha"
+        data-audio="audio/hi.m4a">
+
+  <span class="kana">ひ</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/hikouki.png"
+         alt="ひこうき">
+    <span class="word">ひこうき</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+
+<button class="hiragana-block row-ha"
+        data-audio="audio/hu.m4a">
+
+  <span class="kana">ふ</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/huusen.png"
+         alt="ふうせん">
+    <span class="word">ふうせん</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ha"
+        data-audio="audio/he.m4a">
+
+  <span class="kana">へ</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/hebi.png"
+         alt="へび">
+   <span class="word">へび</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ha"
+        data-audio="audio/ho.m4a">
+
+  <span class="kana">ほ</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/hoshi.png"
+         alt="ほし">
+    <span class="word">ほし</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<!-- =====================
+     ま行
+====================== -->
+
+<button class="hiragana-block row-ma"
+        data-audio="audio/ma.m4a">
+
+  <span class="kana">ま</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/maiku.png"
+         alt="マイク">
+    <span class="word">まいく</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ma"
+        data-audio="audio/mi.m4a">
+
+  <span class="kana">み</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/mikan.png"
+         alt="みかん">
+    <span class="word">みかん</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ma"
+        data-audio="audio/mu.m4a">
+
+  <span class="kana">む</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/mushi.png"
+         alt="むし">
+    <span class="word">むし</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ma"
+        data-audio="audio/me.m4a">
+
+  <span class="kana">め</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/megane.png"
+         alt="めがね">
+    <span class="word">めがね</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ma"
+        data-audio="audio/mo.m4a">
+
+  <span class="kana">も</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/momo.png"
+         alt="もも">
+    <span class="word">もも</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<!-- =====================
+     や行
+====================== -->
+
+<button class="hiragana-block row-ya"
+        data-audio="audio/ya.m4a">
+
+  <span class="kana">や</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/yama.png"
+         alt="やま">
+   <span class="word">やま</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ya"
+        data-audio="audio/yu.m4a">
+
+  <span class="kana">ゆ</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/unicorn.png"
+         alt="ユニコーン">
+    <span class="word long-word">ゆにこーん</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ya"
+        data-audio="audio/yo.m4a">
+
+  <span class="kana">よ</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/yotto.png"
+         alt="ヨット">
+   <span class="word">よっと</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<!-- 空白 -->
+<div class="hiragana-empty"></div>
+<div class="hiragana-empty"></div>
+
+
+<!-- =====================
+     ら行
+====================== -->
+
+<button class="hiragana-block row-ra"
+        data-audio="audio/ra.m4a">
+
+  <span class="kana">ら</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/rappa.png"
+         alt="ラッパ">
+  <span class="word">らっぱ</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ra"
+        data-audio="audio/ri.m4a">
+
+  <span class="kana">り</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/risu.png"
+         alt="りす">
+     <span class="word">りす</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ra"
+        data-audio="audio/ru.m4a">
+
+  <span class="kana">る</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/ruby.png"
+         alt="ルビー">
+    <span class="word">るびー</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ra"
+        data-audio="audio/re.m4a">
+
+  <span class="kana">れ</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/lemon.png"
+         alt="レモン">
+  <span class="word">れもん</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-ra"
+        data-audio="audio/ro.m4a">
+
+  <span class="kana">ろ</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/rousoku.png"
+         alt="ろうそく">
+   <span class="word">ろうそく</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<!-- =====================
+     わ行
+====================== -->
+
+<button class="hiragana-block row-wa"
+        data-audio="audio/wa.m4a">
+
+  <span class="kana">わ</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/wani.png"
+         alt="わに">
+  <span class="word">わに</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-wa"
+        data-audio="audio/wo.m4a">
+
+  <span class="kana">を</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/tewohuru.png"
+         alt="手を振る">
+     <span class="word long-word">手をふる</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+
+
+<button class="hiragana-block row-wa"
+        data-audio="audio/n.m4a">
+
+  <span class="kana">ん</span>
+
+  <div class="item">
+    <img class="picture-image"
+         src="images/hiragana/panda.png"
+         alt="ぱんだ">
+    <span class="word">ぱんだ</span>
+  </div>
+
+  <span class="speaker">🔊</span>
+
+</button>
+  </section>
+
+
+<!-- 空白 -->
+<div class="hiragana-empty"></div>
+<div class="hiragana-empty"></div>
+
+
+  <!-- =========================
+       下部
+  ========================== -->
+
+  <footer class="footer">
+
+    <div class="message">
+      ⭐ えらんだ もじを タップすると おとが でるよ♪
+    </div>
+
+  </footer>
+
+</main>
+
+
+<script src="hiragana.js"></script>
+
+</body>
+</html>

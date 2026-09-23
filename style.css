@@ -1,0 +1,785 @@
+/* ================================
+   基本設定
+================================ */
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family:
+    "Hiragino Maru Gothic ProN",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+
+  overflow: hidden;
+  background: #fffaf2;
+}
+
+
+/* ================================
+   アプリ全体
+================================ */
+
+.app {
+  position: relative;
+
+  width: 100vw;
+  height: 100dvh;
+
+  min-width: 650px;
+
+  background-image: url("images/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  display: flex;
+  flex-direction: column;
+
+  padding:
+    max(12px, env(safe-area-inset-top))
+    max(18px, env(safe-area-inset-right))
+    max(10px, env(safe-area-inset-bottom))
+    max(18px, env(safe-area-inset-left));
+}
+
+
+/* ================================
+   上部
+================================ */
+
+.top-area {
+  position: relative;
+
+  height: 22%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+/* 丸ボタン */
+
+.circle-button {
+  width: clamp(65px, 7vw, 95px);
+  aspect-ratio: 1;
+
+  border-radius: 28%;
+  border: 4px solid rgba(255, 255, 255, 0.8);
+
+  background: linear-gradient(
+    145deg,
+    #ff9bb1,
+    #ff7699
+  );
+
+  color: white;
+
+  font-size: clamp(24px, 3vw, 42px);
+
+  box-shadow:
+    0 5px 0 #dc7992,
+    0 8px 15px rgba(0, 0, 0, 0.12);
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.15s;
+}
+
+.circle-button span {
+  margin-top: 2px;
+  font-size: clamp(11px, 1.2vw, 16px);
+  font-weight: bold;
+}
+
+
+/* ウェルカム */
+
+.welcome-box {
+  position: absolute;
+  left: 50%;
+  top: 0;
+
+  transform: translateX(-50%);
+
+  width: min(52vw, 760px);
+
+  min-height: 95px;
+
+  padding: 14px 40px;
+
+  border: 4px solid #ffb9c8;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffd7e2,
+      #ffc3d3
+    );
+
+  box-shadow:
+    0 6px 0 rgba(234, 157, 179, 0.45);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #765544;
+}
+
+.welcome-box::before {
+  content: "";
+
+  position: absolute;
+  inset: 8px;
+
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 17px;
+
+  pointer-events: none;
+}
+
+.star {
+  font-size: clamp(40px, 4vw, 65px);
+  margin-right: 20px;
+
+  transform: rotate(-10deg);
+}
+
+.welcome-small {
+  margin: 0 0 3px;
+
+  font-size: clamp(18px, 2vw, 30px);
+  font-weight: bold;
+}
+
+.welcome-box h1 {
+  margin: 0;
+
+  font-size: clamp(20px, 2.4vw, 36px);
+}
+
+
+/* 音ボタン */
+
+.sound-button {
+  border: 4px solid white;
+  border-radius: 25px;
+
+  padding: 12px 26px;
+
+  background: linear-gradient(
+    #ffc65b,
+    #ffad38
+  );
+
+  color: white;
+
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: bold;
+
+  box-shadow:
+    0 5px 0 #e39a27,
+    0 8px 15px rgba(0, 0, 0, 0.12);
+
+  cursor: pointer;
+
+  transition: 0.15s;
+}
+
+
+/* ================================
+   メニュー
+================================ */
+
+.menu-area {
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+
+  gap: clamp(10px, 1.4vw, 24px);
+
+  align-items: center;
+
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+/* カード */
+
+.menu-card {
+  position: relative;
+
+  height: min(43vh, 430px);
+
+  border-radius: 30px;
+
+  border: 3px solid rgba(255, 255, 255, 0.85);
+
+  padding: 36px 12px 12px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 0 rgba(0, 0, 0, 0.08),
+    0 12px 20px rgba(0, 0, 0, 0.09);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+}
+
+.menu-card:active {
+  transform: translateY(4px) scale(0.98);
+}
+
+
+/* カード上の丸 */
+
+.card-icon {
+  position: absolute;
+
+  top: -40px;
+  left: 20px;
+
+  width: clamp(62px, 6vw, 88px);
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(35px, 4vw, 55px);
+  font-weight: bold;
+
+  color: white;
+
+  border: 4px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+/* 動物 */
+
+.animal {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  transform: translateY(-72%);
+  z-index: 2;
+}
+
+.animal img {
+  width: clamp(70px, 6.5vw, 105px);
+  height: auto;
+  display: block;
+}
+
+
+/* タイトル */
+
+.menu-card h2 {
+  margin: 8px 0 14px;
+
+  font-size: clamp(18px, 2vw, 30px);
+
+  color: #6d594e;
+
+  text-shadow:
+    2px 2px 0 white,
+    -2px -2px 0 white;
+}
+
+.menu-card > p {
+  margin-top: auto;
+  margin-bottom: 0;
+
+  width: 100%;
+
+  padding: 7px;
+
+  border-radius: 12px;
+
+  color: white;
+  font-size: clamp(10px, 1vw, 15px);
+  font-weight: bold;
+
+  text-align: center;
+}
+
+
+/* ================================
+   アイウエオ
+================================ */
+
+.hiragana-card {
+  background: rgba(255, 232, 237, 0.95);
+  border-color: #ffaabb;
+}
+
+.hiragana-card .card-icon {
+  background: #ff799a;
+}
+
+.hiragana-card h2 {
+  color: #f46f8c;
+}
+
+.hiragana-card > p {
+  background: #ff91a9;
+}
+
+.hiragana-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.hiragana-preview span {
+  padding: 2px 2px;
+  background: white;
+  border: 2px solid #ffb9c6;
+  border-radius: 9px;
+  color: #f4728c;
+  font-weight: bold;
+  font-size: clamp(12px, 1.3vw, 20px);
+}
+
+
+/* ================================
+   ABC
+================================ */
+
+.abc-card {
+  background: rgba(255, 247, 222, 0.96);
+  border-color: #ffc95d;
+}
+
+.abc-card .card-icon {
+  background: #ffbd43;
+}
+
+.abc-card h2 {
+  color: #efa93a;
+}
+
+.abc-card > p {
+  background: #ffc453;
+}
+
+.abc-preview {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.abc-preview span {
+  flex: 1;
+
+  margin: 1px;
+
+  padding: 12px 2px;
+
+  background: white;
+
+  border: 2px solid #ffc75d;
+  border-radius: 9px;
+
+  font-size: clamp(11px, 1.3vw, 20px);
+  color: #e79d23;
+}
+
+
+/* ================================
+   パズル
+================================ */
+
+.puzzle-card {
+  background: rgba(236, 250, 229, 0.96);
+  border-color: #9ccf79;
+}
+
+.puzzle-card .card-icon {
+  background: #8ec96b;
+}
+
+.puzzle-card h2 {
+  color: #70ae4c;
+}
+
+.puzzle-card > p {
+  background: #91c966;
+}
+
+.puzzle-preview {
+  position: relative;
+
+  width: 85%;
+  aspect-ratio: 1.2;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.5) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      rgba(255,255,255,.5) 50%,
+      transparent 50%
+    );
+
+  background-size: 50% 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(55px, 6vw, 95px);
+}
+
+.piece {
+  position: absolute;
+  bottom: -10px;
+  right: -5px;
+
+  font-size: clamp(28px, 3vw, 50px);
+}
+
+
+
+/* =========================
+   ぬりえカード
+========================= */
+
+.coloring-card {
+  border-color: #8fcceb;
+  background: #f1fbff;
+}
+
+
+/* タイトル */
+.coloring-card h2 {
+  color: #368fc7;
+}
+
+
+/* 上の丸アイコン */
+.coloring-card .card-icon {
+  background: #55afe0;
+}
+
+.coloring-card > p {
+  background: #67acd2;
+}
+
+
+/* =========================
+   ぬりえプレビュー
+========================= */
+
+.coloring-preview {
+  position: relative;
+
+  width: 85%;
+  aspect-ratio: 1.4;
+
+  margin: 0 auto;
+
+  background: #fffdf8;
+
+  border: 2px solid #b9dceb;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+/* いるかの線画 */
+.coloring-image {
+  width: 75%;
+  height: 75%;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   クレヨン
+========================= */
+
+.crayons {
+  position: absolute;
+
+  left: 5px;
+  bottom: 5px;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+
+  z-index: 2;
+}
+
+
+/* パレット */
+.palette-img {
+  width: clamp(25px, 3vw, 45px);
+  height: auto;
+
+  object-fit: contain;
+
+  transform: rotate(-10deg);
+}
+
+
+/* クレヨン */
+.crayon-img {
+  width: clamp(18px, 2vw, 30px);
+  height: auto;
+
+  object-fit: contain;
+
+  transform: rotate(12deg);
+}
+
+/* ================================
+   書いてみよう
+================================ */
+
+.write-card {
+  background: rgba(245, 235, 252, 0.96);
+  border-color: #b999d1;
+}
+
+.write-card .card-icon {
+  background: #9d70bd;
+}
+
+.write-card h2 {
+  color: #8b67aa;
+}
+
+.write-card > p {
+  background: #af83c7;
+}
+
+.write-preview {
+  position: relative;
+
+  width: 90%;
+  aspect-ratio: 2/1;
+
+  border:
+    2px dashed
+    rgba(171, 126, 190, 0.5);
+
+  background:
+    linear-gradient(
+      to right,
+      transparent 49%,
+      rgba(176, 134, 194, .25) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 49%,
+      rgba(176, 134, 194, .25) 50%,
+      transparent 51%
+    ),
+    rgba(255, 255, 255, 0.8);
+
+  border-radius: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: clamp(40px, 5vw, 80px);
+
+  color: rgba(140, 105, 150, 0.45);
+}
+
+.write-preview span {
+  position: absolute;
+
+  right: -10px;
+  bottom: -10px;
+
+  font-size: clamp(25px, 3vw, 50px);
+}
+
+
+/* ================================
+   下
+================================ */
+
+.bottom-area {
+  height: 14%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.bottom-button {
+  min-width: 160px;
+
+  padding: 12px 24px;
+
+  border: 4px solid white;
+  border-radius: 24px;
+
+  background: #ff8da9;
+
+  color: white;
+
+  font-size: clamp(15px, 1.7vw, 24px);
+  font-weight: bold;
+
+  box-shadow:
+    0 5px 0 #d97491,
+    0 8px 15px rgba(0, 0, 0, 0.1);
+
+  cursor: pointer;
+}
+
+
+/* ================================
+   ボタン共通
+================================ */
+
+button {
+  font-family: inherit;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+
+/* ================================
+   縦向き表示
+================================ */
+
+.rotate-message {
+  display: none;
+}
+
+
+/* スマホ縦向きなら画面を隠す */
+
+@media (orientation: portrait) {
+
+  .app {
+    display: none;
+  }
+
+  .rotate-message {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff5f8;
+
+    text-align: center;
+
+    color: #e67c98;
+
+    font-size: 24px;
+  }
+
+  .rotate-message p {
+    font-size: 60px;
+    margin: 0 0 15px;
+  }
+}
+
+
+/* ================================
+   小さめ端末
+================================ */
+
+@media (max-height: 500px) {
+
+  .welcome-box {
+    min-height: 70px;
+    padding: 8px 30px;
+  }
+
+  .top-area {
+    height: 22%;
+  }
+
+  .menu-card {
+    height: 45vh;
+    padding-top: 25px;
+    position: relative;
+  }
+
+  .card-icon {
+    top: -28px;
+  }
+
+  .animal {
+  position: absolute;
+  /* カード上辺に配置 */
+  top: 0;
+  right: 10px;
+   /* 自分の高さ分、上へずらす */
+  transform: translateY(-72%);
+
+  z-index: 2;
+}
+
+.animal img {
+  width: clamp(70px, 6.5vw, 105px);
+  height: auto;
+  display: block;
+}
+
+}

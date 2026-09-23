@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>知育アプリ</title>
+　<link rel="manifest" href="manifest.json">
+　<meta name="theme-color" content="#4caf50">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <!-- 上部 -->
+    <header class="top-area">
+
+      <button class="circle-button settings-button" id="settingsButton">
+        ⚙
+        <span>せってい</span>
+      </button>
+
+      <div class="welcome-box">
+        <div class="star">⭐</div>
+
+        <div>
+          <p class="welcome-small">ようこそ！</p>
+          <h1>いっしょに たのしく まなぼう♪</h1>
+        </div>
+      </div>
+
+      <button class="sound-button" id="soundButton">
+        🔊
+        <span>おと</span>
+      </button>
+
+    </header>
+
+
+    <!-- 遊び一覧 -->
+    <section class="menu-area">
+
+      <!-- アイウエオ表 -->
+      <button
+        class="menu-card hiragana-card"
+        data-page="hiragana.html"
+      >
+        <div class="card-icon">あ</div>
+        <div class="animal">
+          <img src="images/duck.png" alt="あひる">
+        </div>
+
+        <h2>アイウエオ表</h2>
+
+        <div class="hiragana-preview">
+          <span>あ<br>🍎</span>
+          <span>い<br>🍓</span>
+          <span>う<br>🐰</span>
+          <span>え<br>📖</span>
+          <span>お<br>🍙</span>
+        </div>
+
+        <p>タップすると<br>おとがでるよ♪</p>
+      </button>
+
+
+      <!-- ABC -->
+      <button
+        class="menu-card abc-card"
+        data-page="abc.html"
+      >
+        <div class="card-icon">A</div>
+        <div class="animal">
+          <img src="images/bear.png" alt="くま">
+        </div>
+
+        <h2>ABC</h2>
+
+        <div class="abc-preview">
+          <span>A<br>🍎</span>
+          <span>B<br>🐻</span>
+          <span>C<br>🚗</span>
+        </div>
+
+        <p>えいごを<br>おぼえよう！</p>
+      </button>
+
+
+      <!-- パズル -->
+      <button
+        class="menu-card puzzle-card"
+        data-page="puzzle.html"
+      >
+        <div class="card-icon">✚</div>
+        <div class="animal">
+          <img src="images/cat.png" alt="ねこ">
+        </div>
+
+        <h2>パズル</h2>
+
+        <div class="puzzle-preview">
+          🦁
+          <span class="piece">🧩</span>
+        </div>
+
+        <p>ピースを<br>あわせてみよう！</p>
+      </button>
+
+
+     <!-- ぬりえ -->
+<button
+  class="menu-card coloring-card"
+  data-page="coloring-select.html"
+  >
+  <!-- 上の丸いアイコン -->
+  <div class="card-icon">★</div>
+
+  <!-- カードの上からのぞく動物 -->
+  <div class="animal">
+    <img src="images/rabbit.png" alt="うさぎ">
+  </div>
+
+  <h2>ぬりえ</h2>
+
+  <!-- ぬりえのプレビュー -->
+  <div class="coloring-preview">
+    <img
+      src="images/coloring/dolphin.png"
+      alt="いるかのぬりえ"
+      class="coloring-image"
+    >
+
+    <!-- クレヨン -->
+    <div class="crayons">
+      <img
+    class="palette-img"
+    src="images/coloring/palette.png"
+    alt="パレット"
+  >
+
+  <img
+    class="crayon-img"
+    src="images/coloring/crayon.png"
+    alt="クレヨン"
+  >
+    </div>
+  </div>
+
+  <p>すきないろで<br>ぬってみよう！</p>
+</button>
+
+
+      <!-- 書いてみよう -->
+      <button
+        class="menu-card write-card"
+        data-page="write.html"
+      >
+        <div class="card-icon">✎</div>
+        <div class="animal">
+          <img src="images/koala.png" alt="こあら"></div>
+
+        <h2>書いてみよう</h2>
+
+        <div class="write-preview">
+          あ
+          <span>✏️</span>
+        </div>
+
+        <p>なぞって<br>かいてみよう！</p>
+      </button>
+
+    </section>
+
+
+    <!-- 下部 -->
+    <footer class="bottom-area">
+
+      <button class="bottom-button favorite-button">
+        ⭐ おきにいり
+      </button>
+
+      <button class="bottom-button reward-button">
+        🎁 ごほうび
+      </button>
+
+    </footer>
+
+  </main>
+
+
+  <!-- 縦向きだった場合 -->
+  <div class="rotate-message">
+    <div>
+      <p>📱 ↻</p>
+      <strong>よこむきにしてね♪</strong>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
