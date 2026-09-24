@@ -859,9 +859,10 @@ button:active {
     min-width: 0;
 
     height: 44vh;
-    padding: 22px 5px 6px;
+    padding: 22px 4px 5px;
 
     border-radius: 18px;
+    overflow: visible;
   }
 
   /* 丸アイコン */
@@ -949,4 +950,53 @@ button:active {
 
     font-size: clamp(11px, 1.7vw, 16px);
   }
+}
+/* ===== iPhone横向き：カード内の崩れ防止 ===== */
+
+.menu-card h2 {
+  width: 100%;
+  margin: 4px 0 6px;
+
+  font-size: clamp(11px, 1.55vw, 17px);
+  line-height: 1.1;
+
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* カード下の説明 */
+.menu-card > p {
+  width: 100%;
+  padding: 4px 2px;
+
+  font-size: clamp(7px, 1.05vw, 10px);
+  line-height: 1.2;
+
+  white-space: normal;
+}
+
+/* あいうえおのマス */
+.hiragana-preview {
+  gap: 2px;
+}
+
+.hiragana-preview span {
+  padding: 1px;
+  font-size: clamp(8px, 1.1vw, 12px);
+}
+
+/* ABCのマス */
+.abc-preview span {
+  padding: 4px 1px;
+  font-size: clamp(8px, 1.1vw, 12px);
+}
+
+/* プレビューを少しコンパクトに */
+.puzzle-preview,
+.coloring-preview {
+  width: 72%;
+}
+
+.write-preview {
+  width: 78%;
 }
