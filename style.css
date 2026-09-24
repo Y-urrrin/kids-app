@@ -37,7 +37,6 @@ body {
   width: 100vw;
   height: 100dvh;
 
-  min-width: 650px;
 
   background-image: url("images/background.png");
   background-repeat: no-repeat;
@@ -782,4 +781,172 @@ button:active {
   display: block;
 }
 
+}
+
+/* ================================
+   スマホ横向き対応
+================================ */
+
+@media (orientation: landscape) and (max-height: 500px) {
+
+  .app {
+    width: 100%;
+    height: 100dvh;
+
+    padding:
+      max(6px, env(safe-area-inset-top))
+      max(10px, env(safe-area-inset-right))
+      max(6px, env(safe-area-inset-bottom))
+      max(10px, env(safe-area-inset-left));
+  }
+
+  /* 上部 */
+  .top-area {
+    height: 20%;
+  }
+
+  /* 設定 */
+  .circle-button {
+    width: clamp(48px, 7vw, 65px);
+    border-width: 3px;
+    font-size: clamp(18px, 3vw, 28px);
+  }
+
+  .circle-button span {
+    font-size: clamp(9px, 1.4vw, 12px);
+  }
+
+  /* ようこそ */
+  .welcome-box {
+    width: 52%;
+    min-height: 55px;
+    padding: 5px 15px;
+    border-width: 3px;
+    border-radius: 16px;
+  }
+
+  .star {
+    font-size: clamp(24px, 4vw, 36px);
+    margin-right: 8px;
+  }
+
+  .welcome-small {
+    font-size: clamp(12px, 2vw, 18px);
+  }
+
+  .welcome-box h1 {
+    font-size: clamp(13px, 2.3vw, 20px);
+    white-space: nowrap;
+  }
+
+  /* 音 */
+  .sound-button {
+    padding: 7px 14px;
+    border-width: 3px;
+    border-radius: 16px;
+    font-size: clamp(13px, 2vw, 19px);
+  }
+
+  /* 5枚のカード */
+  .menu-area {
+    width: 86%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(5px, 1vw, 10px);
+  }
+
+  .menu-card {
+    width: 100%;
+    min-width: 0;
+
+    height: 44vh;
+    padding: 22px 5px 6px;
+
+    border-radius: 18px;
+  }
+
+  /* 丸アイコン */
+  .card-icon {
+    top: -22px;
+    left: 8px;
+
+    width: clamp(45px, 6vw, 60px);
+    font-size: clamp(24px, 4vw, 36px);
+
+    border-width: 3px;
+  }
+
+  /* 動物 */
+  .animal {
+    right: 3px;
+  }
+
+  .animal img {
+    width: clamp(45px, 6.5vw, 65px);
+  }
+
+  /* カードタイトル */
+  .menu-card h2 {
+    margin: 5px 0 7px;
+    font-size: clamp(13px, 2vw, 20px);
+  }
+
+  /* カード下の説明 */
+  .menu-card > p {
+    padding: 4px 2px;
+    border-radius: 8px;
+
+    font-size: clamp(8px, 1.2vw, 11px);
+    line-height: 1.3;
+  }
+
+  /* あいうえお */
+  .hiragana-preview span {
+    font-size: clamp(9px, 1.3vw, 13px);
+  }
+
+  /* ABC */
+  .abc-preview span {
+    padding: 5px 1px;
+    font-size: clamp(9px, 1.3vw, 13px);
+  }
+
+  /* パズル */
+  .puzzle-preview {
+    width: 75%;
+    font-size: clamp(35px, 6vw, 55px);
+  }
+
+  .piece {
+    font-size: clamp(20px, 3vw, 30px);
+  }
+
+  /* ぬりえ */
+  .coloring-preview {
+    width: 78%;
+  }
+
+  /* 書いてみよう */
+  .write-preview {
+    width: 82%;
+    font-size: clamp(28px, 5vw, 45px);
+  }
+
+  .write-preview span {
+    font-size: clamp(18px, 3vw, 28px);
+  }
+
+  /* 下部 */
+  .bottom-area {
+    height: 12%;
+  }
+
+  .bottom-button {
+    min-width: 110px;
+    padding: 6px 12px;
+
+    border-width: 3px;
+    border-radius: 16px;
+
+    font-size: clamp(11px, 1.7vw, 16px);
+  }
 }
