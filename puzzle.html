@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        user-scalable=no">
+
+  <title>パズル</title>
+
+  <link rel="stylesheet" href="puzzle.css">
+
+</head>
+
+<body>
+
+<main class="game">
+
+  <!-- 戻る -->
+
+  <a href="puzzle-select.html"
+     class="back-button">
+    ←
+  </a>
+
+
+  <!-- タイトル -->
+
+  <div class="puzzle-title">
+    <span id="puzzleName"></span>
+  </div>
+
+
+  <!-- ゲームエリア -->
+
+  <div class="game-area">
+
+    <!-- パズルを置く場所 -->
+
+    <div
+      id="puzzleBoard"
+      class="puzzle-board">
+    </div>
+
+
+    <!-- バラバラのピース -->
+
+    <div
+      id="pieceArea"
+      class="piece-area">
+    </div>
+
+  </div>
+
+
+</main>
+
+
+<!-- ====================== -->
+<!-- 通常完成ポップアップ -->
+<!-- ====================== -->
+
+<div
+  id="completeModal"
+  class="modal hidden">
+
+  <div class="modal-card">
+
+    <div class="stars">
+      ⭐ ✨ ⭐
+    </div>
+
+    <h2>
+      よくできました！
+    </h2>
+
+    <img
+      id="completeImage"
+      class="complete-image"
+      alt="完成">
+
+    <div class="modal-buttons">
+
+      <button
+        id="nextButton"
+        class="next-button">
+
+        つぎへ進む
+
+      </button>
+
+
+      <button
+        class="theme-button"
+        onclick="location.href='puzzle-select.html'">
+
+        テーマを選ぶ
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ====================== -->
+<!-- 全問クリア -->
+<!-- ====================== -->
+
+
+<div
+  id="allCompleteModal"
+  class="modal hidden">
+
+  <div class="modal-card final-card">
+
+    <!-- お祝い画像 -->
+    <img
+      src="images/puzzle/all-complete.png"
+      class="all-complete-image"
+      alt="ぜんぶできたよ！">
+
+    <button
+      class="theme-button"
+      onclick="location.href='puzzle-select.html'">
+
+      テーマを選ぶ
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<script src="puzzle.js"></script>
+
+</body>
+</html>
