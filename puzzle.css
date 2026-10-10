@@ -585,3 +585,137 @@ body {
 
   border-radius: 24px;
 }
+
+/* =========================
+   パズルの完成形を薄く表示
+========================= */
+
+.puzzle-board {
+  position: relative;
+  isolation: isolate;
+}
+
+/* 完成形のガイド画像 */
+.puzzle-board::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: var(--guide-image);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.3;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ガイド画像の上にマスを表示 */
+.puzzle-board .slot {
+  position: relative;
+  z-index: 1;
+
+  background: transparent;
+}
+
+/* はめたピースを鮮明に表示 */
+.puzzle-board .puzzle-piece {
+  opacity: 1;
+}
+
+/* =========================
+   完成ポップアップ：スマホ横画面
+========================= */
+
+@media (max-height: 600px) {
+
+  /* ポップアップ全体 */
+  .modal {
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  /* 白いカード */
+  .modal-card {
+    width: min(420px, 85vw);
+    max-height: calc(100dvh - 20px);
+
+    padding: 12px 20px;
+
+    overflow-y: auto;
+
+    border-radius: 24px;
+
+    flex-shrink: 0;
+    margin: auto;
+  }
+
+  /* 星 */
+  .stars {
+    font-size: 22px;
+  }
+
+  /* よくできました！ */
+  .modal-card h2 {
+    font-size: 26px;
+    margin: 4px 0 10px;
+  }
+
+  /* 完成したパズル画像 */
+  .complete-image {
+    display: block;
+
+    width: auto;
+    height: min(32dvh, 170px);
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+  }
+
+  /* ボタンを横並び */
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  /* ボタンを小さく */
+  .modal button {
+    font-size: 15px;
+    padding: 8px 14px;
+    white-space: nowrap;
+  }
+
+}
+
+/* =========================
+   全問クリア：スマホ横画面
+========================= */
+
+@media (max-height: 600px) {
+
+  .final-card {
+    width: min(400px, 85vw);
+    padding: 12px 16px;
+  }
+
+  .all-complete-image {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    max-height: 55dvh;
+
+    margin: 0 auto 10px;
+
+    object-fit: contain;
+  }
+
+}

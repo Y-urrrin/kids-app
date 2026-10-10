@@ -190,6 +190,12 @@ let originalY = 0;
 
 function createPuzzle() {
 
+  /* 完成形のガイド画像を設定 */
+board.style.setProperty(
+  "--guide-image",
+  `url("${puzzle.image}")`
+);
+
   board.innerHTML = "";
   pieceArea.innerHTML = "";
 
