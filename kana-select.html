@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>ひらがな・カタカナをえらぼう</title>
+
+  <link rel="stylesheet" href="kana-select.css">
+
+  <script src="kana-select.js" defer></script>
+</head>
+
+<body>
+
+  <main class="app">
+
+    <!-- もどるボタン -->
+    <button class="back-button" id="backButton">
+      ◀ もどる
+    </button>
+
+    <!-- タイトル -->
+    <header class="page-header">
+      <span class="star">⭐</span>
+      <h1>どちらで まなぼう？</h1>
+      <span class="shell">🐚</span>
+    </header>
+
+    <!-- 選択カード -->
+    <section class="select-area">
+
+      <!-- ひらがな -->
+      <button
+        class="select-card hiragana-card"
+        data-page="hiragana.html"
+      >
+
+        <img
+          class="card-animal"
+          src="images/bear.png"
+          alt="くま"
+        >
+
+        <h2>ひらがな</h2>
+
+        <div class="preview-grid">
+
+          <div class="preview-item">
+            <span>あ</span>
+            <img src="images/hiragana/ahiru.png" alt="あひる">
+          </div>
+
+          <div class="preview-item">
+            <span>い</span>
+            <img src="images/hiragana/ichigo.png" alt="いちご">
+          </div>
+
+          <div class="preview-item">
+            <span>う</span>
+            <img src="images/hiragana/usagi.png" alt="うさぎ">
+          </div>
+
+        </div>
+
+      </button>
+
+      <!-- カタカナ -->
+      <button
+        class="select-card katakana-card"
+        data-page="katakana.html"
+      >
+
+        <img
+          class="card-animal"
+          src="images/cat.png"
+          alt="ねこ"
+        >
+
+        <h2>カタカナ</h2>
+
+        <div class="preview-grid">
+
+          <div class="preview-item">
+            <span>ア</span>
+            <img src="images/katakana/icecream.png" alt="アイス">
+          </div>
+
+          <div class="preview-item">
+            <span>イ</span>
+            <img src="images/katakana/iruka.png" alt="イルカ">
+          </div>
+
+          <div class="preview-item">
+            <span>ウ</span>
+            <img src="images/katakana/ukurere.png" alt="ukurere">
+          </div>
+
+        </div>
+
+      </button>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

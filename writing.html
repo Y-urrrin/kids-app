@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ひらがなを かいてみよう</title>
+  <link rel="stylesheet" href="writing.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <a class="pill back" href="writing-select.html">
+        ❮ もどる
+      </a>
+      <h1>
+        ⭐ 「<span id="titleKana">あ</span>」を かいてみよう！
+      </h1>
+    </header>
+
+    <section class="content">
+      <aside class="sample">
+        <div class="sample-kana" id="sampleKana">あ</div>
+        <img class="picture" id="picture" alt="">
+        <div id="word">あひる</div>
+        <p id="step">1かくめを なぞろう！</p>
+      </aside>
+
+      <div class="practice">
+        <svg id="board"
+             viewBox="0 0 1024 1024"
+             aria-label="ひらがなを書く場所">
+
+          <rect width="1024" height="1024"
+                rx="22" fill="#fff"/>
+
+      <path d="M512 0V1024 M0 512H1024"
+            stroke="#ffc3d4"
+            stroke-width="3"
+            stroke-dasharray="20 20"/>
+          <g id="guide"></g>
+          <g id="ink"></g>
+
+          <path id="current"
+                fill="none"
+                stroke="#f65d92"
+                stroke-width="17"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                opacity=".7"/>
+        </svg>
+
+        <div class="actions">
+          <button id="reset">↻ やりなおす</button>
+          <button id="next" hidden>つぎの もじ →</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="status" id="status" role="status"></div>
+  </main>
+
+  <script src="writing.js"></script>
+</body>
+</html>

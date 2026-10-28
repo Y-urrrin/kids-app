@@ -258,10 +258,18 @@ body {
 }
 
 .word {
-  font-size: clamp(11px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.5vw, 20px);
   font-weight: bold;
-
   color: #684d43;
+
+  /* 改行させない */
+  white-space: nowrap;
+
+  /* 横幅が大きくなりすぎないようにする */
+  max-width: 100%;
+
+  /* 中央揃え */
+  text-align: center;
 }
 /* 長い名前 */
 .word.long-word {

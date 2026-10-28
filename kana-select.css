@@ -1,0 +1,324 @@
+/* =========================
+   基本設定
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Maru Gothic ProN",
+               "Arial Rounded MT Bold",
+               sans-serif;
+}
+
+/* 背景 */
+.app {
+  width: 100vw;
+  min-height: 100dvh;
+
+  background-image: url("images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   もどるボタン
+========================= */
+
+.back-button {
+  position: absolute;
+  top: 3%;
+  left: 2%;
+
+  padding: 12px 22px;
+
+  background: #ff91b1;
+  color: white;
+
+  border: 4px solid #ffb8ce;
+  border-radius: 40px;
+
+  font-size: clamp(14px, 2vw, 24px);
+  font-weight: bold;
+
+  box-shadow: 0 5px 0 #df7997;
+
+  cursor: pointer;
+  z-index: 5;
+}
+
+
+/* =========================
+   タイトル
+========================= */
+
+.page-header {
+  position: relative;
+
+  width: min(60%, 780px);
+
+  margin-top: 3vh;
+  padding: 15px 25px;
+
+  background: #ffc3d7;
+
+  border: 4px solid #ff9fbd;
+  border-radius: 28px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 0 #eaa0b9;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-size: clamp(24px, 3.5vw, 50px);
+
+  color: #795447;
+
+  text-shadow:
+    2px 2px white,
+    -2px -2px white;
+}
+
+.star {
+  position: absolute;
+  left: -30px;
+  top: 5px;
+
+  font-size: clamp(28px, 4vw, 60px);
+}
+
+.shell {
+  position: absolute;
+  right: -20px;
+  bottom: -10px;
+
+  font-size: clamp(24px, 3vw, 45px);
+}
+
+
+/* =========================
+   カード配置
+========================= */
+
+.select-area {
+  width: min(80%, 1150px);
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 4vw;
+
+  margin-top: clamp(55px, 12vh, 120px);
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   カード共通
+========================= */
+
+.select-card {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 35px 25px 25px;
+
+  border: 5px solid;
+  border-radius: 45px;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: transform 0.2s;
+}
+
+.select-card:active {
+  transform: scale(0.96);
+}
+
+.select-card h2 {
+  margin: 12px 0 25px;
+
+  font-size: clamp(28px, 4vw, 60px);
+  font-weight: bold;
+
+  text-shadow: 2px 2px white;
+}
+
+
+/* =========================
+   ひらがなカード
+========================= */
+
+.hiragana-card {
+  background: #fff0f5;
+  border-color: #ff9cbd;
+
+  box-shadow: 0 7px 0 #f3bad0;
+}
+
+.hiragana-card h2 {
+  color: #f778a3;
+}
+
+
+/* =========================
+   カタカナカード
+========================= */
+
+.katakana-card {
+  background: #fff9db;
+  border-color: #ffc65c;
+
+  box-shadow: 0 7px 0 #f3d488;
+}
+
+.katakana-card h2 {
+  color: #f4aa37;
+}
+
+
+/* =========================
+   動物
+========================= */
+
+.card-animal {
+  position: absolute;
+
+  width: clamp(75px, 12vw, 155px);
+  height: auto;
+
+  top: 0;
+  left: 50%;
+
+  transform: translate(-50%, -75%);
+
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+/* =========================
+   文字プレビュー
+========================= */
+
+.preview-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.preview-item {
+  min-width: 0;
+  aspect-ratio: 0.85;
+
+  background: white;
+
+  border: 3px solid;
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  overflow: hidden;
+}
+
+.hiragana-card .preview-item {
+  border-color: #ffb4c8;
+}
+
+.katakana-card .preview-item {
+  border-color: #ffc977;
+}
+
+.preview-item span {
+  font-size: clamp(25px, 3.5vw, 55px);
+  font-weight: bold;
+}
+
+.hiragana-card .preview-item span {
+  color: #f36b91;
+}
+
+.katakana-card .preview-item span {
+  color: #368de0;
+}
+
+.preview-item img {
+  width: 75%;
+  height: 48%;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   横画面・小さいスマホ対応
+========================= */
+
+@media (orientation: landscape) and (max-height: 500px) {
+
+  .page-header {
+    padding: 7px 20px;
+    margin-top: 2vh;
+  }
+
+  .select-area {
+    width: min(76%, 900px);
+    margin-top: 45px;
+    gap: 25px;
+  }
+
+  .select-card {
+    padding: 12px 18px 15px;
+    border-radius: 25px;
+  }
+
+  .select-card h2 {
+    margin: 4px 0 8px;
+    font-size: clamp(22px, 3vw, 36px);
+  }
+
+  .card-animal {
+    width: clamp(55px, 8vw, 90px);
+    transform: translate(-50%, -65%);
+  }
+
+  .preview-grid {
+    gap: 6px;
+  }
+
+  .preview-item {
+    aspect-ratio: 1.1;
+    border-radius: 10px;
+  }
+
+  .preview-item span {
+    font-size: clamp(20px, 3vw, 34px);
+  }
+
+}
