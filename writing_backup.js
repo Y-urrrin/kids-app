@@ -13,12 +13,12 @@ const letters = [
   ['か', 'images/hiragana/kaeru.png', 'かえる'],
   ['き', 'images/hiragana/kirin.png', 'きりん'],
   ['く', 'images/hiragana/kuruma.png', 'くるま'],
-  ['け', 'images/hiragana/keeki.png', 'けーき'],
-  ['こ', 'images/hiragana/koala.png', 'こあら'],
+  ['け', 'images/hiragana/keisatu.png', 'けいさつ'],
+  ['こ', 'images/hiragana/konnbu.png', 'こんぶ'],
 
   ['さ', 'images/hiragana/sakana.png', 'さかな'],
   ['し', 'images/hiragana/shika.png', 'しか'],
-  ['す', 'images/hiragana/suika.png', 'すいか'],
+  ['す', 'images/hiragana/sushi.png', 'すし'],
   ['せ', 'images/hiragana/semi.png', 'せみ'],
   ['そ', 'images/hiragana/soba.png', 'そば'],
 
@@ -32,7 +32,7 @@ const letters = [
   ['に', 'images/hiragana/ninjin.png', 'にんじん'],
   ['ぬ', 'images/hiragana/nuigurumi.png', 'ぬいぐるみ'],
   ['ね', 'images/hiragana/neko.png', 'ねこ'],
-  ['の', 'images/hiragana/noto.png', 'のーと'],
+  ['の', 'images/hiragana/nori.png', 'のり'],
 
   ['は', 'images/hiragana/hana.png', 'はな'],
   ['ひ', 'images/hiragana/hikouki.png', 'ひこうき'],
@@ -47,13 +47,13 @@ const letters = [
   ['も', 'images/hiragana/momo.png', 'もも'],
 
   ['や', 'images/hiragana/yama.png', 'やま'],
-  ['ゆ', 'images/hiragana/unicorn.png', 'ゆにこーん'],
+  ['ゆ', 'images/hiragana/yuki.png', 'ゆき'],
   ['よ', 'images/hiragana/yotto.png', 'よっと'],
 
   ['ら', 'images/hiragana/rappa.png', 'らっぱ'],
-  ['り', 'images/hiragana/risu.png', 'りす'],
+  ['り', 'images/hiragana/ringo.png', 'りんご'],
   ['る', 'images/hiragana/ruby.png', 'るびー'],
-  ['れ', 'images/hiragana/remon.png', 'れもん'],
+  ['れ', 'images/hiragana/lemon.png', 'れもん'],
   ['ろ', 'images/hiragana/rousoku.png', 'ろうそく'],
 
   ['わ', 'images/hiragana/wani.png', 'わに'],
