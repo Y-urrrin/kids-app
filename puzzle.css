@@ -719,3 +719,32 @@ body {
   }
 
 }
+/* 4・9ピース共通 */
+.puzzle-board { grid-template-columns: repeat(var(--grid-size, 3), minmax(0, 1fr)); grid-template-rows: repeat(var(--grid-size, 3), minmax(0, 1fr)); flex: none; }
+.piece-area { grid-template-columns: repeat(var(--grid-size, 3), minmax(0, 1fr)); min-height: 0; }
+.slot { min-width: 0; min-height: 0; }
+/* かんたんモード */
+body.easy-mode { background-color: #fff9e5; background-image: linear-gradient(90deg, rgba(255,210,110,.22) 50%, transparent 50%), linear-gradient(rgba(255,210,110,.22) 50%, transparent 50%); }
+.easy-mode .game-area { --side: min(65dvh, 42vw, 520px); gap: clamp(10px, 3vw, 40px); }
+.easy-mode .puzzle-board { width: var(--side); border-width: clamp(6px, 1.2vw, 12px); }
+.easy-mode .piece-area { width: var(--side); flex: none; gap: clamp(4px, 1vw, 10px); }
+.easy-mode .puzzle-piece { min-width: 0; }
+@media (orientation: landscape) and (max-height: 500px) {
+ .easy-mode .game-area { --side: min(calc(100dvh - 80px), 42vw, 420px); }
+ .easy-mode .puzzle-title { margin: 5px auto 9px; padding: 4px 10px; }
+ .easy-mode .puzzle-title span { font-size: clamp(16px, 3vw, 26px); }
+ .easy-mode .back-button { width: 40px; height: 40px; top: 6px; left: 12px; font-size: 25px; }
+}
+@media (orientation: portrait) {
+ .easy-mode .game-area { --side: min(38dvh, 85vw, 480px); flex-direction: column; gap: 12px; }
+ body.easy-mode { overflow-y: auto; }
+ .easy-mode .puzzle-title { width: 65vw; }
+}
+
+/* ピースを取り出した後の空白 */
+.piece-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  visibility: hidden;
+  pointer-events: none;
+}

@@ -169,7 +169,17 @@ title.textContent = puzzle.name;
    基本設定
 ========================= */
 
-const totalPieces = 9;
+const level = params.get("level") === "4" ? "4" : "9";
+const gridSize = level === "4" ? 2 : 3;
+const totalPieces = gridSize ** 2;
+document.body.classList.toggle("easy-mode", level === "4");
+board.style.setProperty("--grid-size", gridSize);
+pieceArea.style.setProperty("--grid-size", gridSize);
+const themeUrl = `puzzle-select.html?level=${level}`;
+document.querySelector(".back-button").href = themeUrl;
+document.querySelectorAll(".theme-button").forEach(button => {
+  button.addEventListener("click", () => location.href = themeUrl);
+});
 
 let completedPieces = 0;
 
@@ -219,11 +229,7 @@ board.style.setProperty(
 
   /* ピースをシャッフル */
 
-  const numbers = [
-  0, 1, 2,
-  3, 4, 5,
-  6, 7, 8
-];
+  const numbers = Array.from({ length: totalPieces }, (_, i) => i);
 
   shuffle(numbers);
 
@@ -255,26 +261,26 @@ function createPiece(index) {
 
 
   /* =========================
-   画像を3×3に分割
+   画像をレベルに応じて分割
 ========================= */
 
 piece.style.backgroundImage =
   `url("${puzzle.image}")`;
 
 piece.style.backgroundSize =
-  "300% 300%";
+  `${gridSize * 100}% ${gridSize * 100}%`;
 
 
 /* 何列目・何行目かを計算 */
 
-const col = index % 3;
-const row = Math.floor(index / 3);
+const col = index % gridSize;
+const row = Math.floor(index / gridSize);
 
 
 /* 0% / 50% / 100% */
 
-const x = col * 50;
-const y = row * 50;
+const x = col * 100 / (gridSize - 1);
+const y = row * 100 / (gridSize - 1);
 
 
 piece.style.backgroundPosition =
@@ -298,6 +304,7 @@ piece.style.backgroundPosition =
 
 function startDrag(e) {
 
+  if (activePiece || e.currentTarget.classList.contains("returning")) return;
   const piece = e.currentTarget;
 
   activePiece = piece;
@@ -305,7 +312,7 @@ function startDrag(e) {
 
   /* pointerを確保 */
 
-  piece.setPointerCapture(e.pointerId);
+
 
 
   /* 現在位置 */
@@ -329,7 +336,16 @@ function startDrag(e) {
     自由に動かせる。
   */
 
+/* ピースの元の場所を確保 */
+  const placeholder = document.createElement("div");
+  placeholder.className = "piece-placeholder";
+
+  piece.before(placeholder);
+  piece.placeholder = placeholder;
+
+/* ピースを移動 */
   document.body.appendChild(piece);
+  piece.setPointerCapture(e.pointerId);
 
 
   /* 固定配置にする */
@@ -381,7 +397,7 @@ function startDrag(e) {
 
 function moveDrag(e) {
 
-  if (!activePiece) return;
+  if (!activePiece || e.currentTarget !== activePiece) return;
 
 
   const moveX =
@@ -406,7 +422,7 @@ function moveDrag(e) {
 
 function endDrag(e) {
 
-  if (!activePiece) return;
+  if (!activePiece || e.currentTarget !== activePiece) return;
 
 
   const piece = activePiece;
@@ -455,7 +471,7 @@ function endDrag(e) {
     centerY <= slotRect.bottom;
 
 
-  if (isCorrect) {
+  if (isCorrect && e.type !== "pointercancel") {
 
     /* 正解 */
 
@@ -602,7 +618,7 @@ function returnPiece(piece) {
 
   setTimeout(() => {
 
-    pieceArea.appendChild(piece);
+    piece.placeholder.replaceWith(piece);
 
 
     piece.style.position =
@@ -669,7 +685,7 @@ nextButton.addEventListener("click", () => {
   if (nextIndex < themeData.puzzles.length) {
 
     window.location.href =
-      `puzzle.html?theme=${theme}&index=${nextIndex}`;
+      `puzzle.html?theme=${theme}&index=${nextIndex}&level=${level}`;
 
     return;
   }

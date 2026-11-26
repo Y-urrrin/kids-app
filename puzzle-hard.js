@@ -453,7 +453,6 @@ function snapPiece(piece, slot) {
   /* slotの中へ */
 
   slot.appendChild(piece);
-  piece.placeholder.remove();
 
 
   /* ドラッグ用CSS解除 */
