@@ -1,0 +1,390 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    "Hiragino Maru Gothic ProN",
+    "Yu Gothic", sans-serif;
+
+  color: #70442f;
+
+  background: #ffe8ef
+    url("images/puzzle-level-bg.png")
+    center center / 100% 100% no-repeat;
+}
+
+/* 画面全体 */
+.level-page {
+  min-height: 100dvh;
+  padding: 18px 5vw 30px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 戻る */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 4px solid white;
+  border-radius: 50%;
+
+  background: #ff7897;
+  color: white;
+  text-decoration: none;
+  font-size: 36px;
+
+  box-shadow: 0 5px 0 #e85e80;
+  z-index: 5;
+}
+
+/* 木製タイトル */
+.level-title {
+  max-width: 80%;
+  padding: 12px 36px;
+  margin-bottom: 24px;
+
+  background: linear-gradient(
+    #ffe0a3, #f6c77c
+  );
+
+  border: 5px solid #dda45d;
+  border-radius: 35px;
+
+  box-shadow:
+    0 5px 0 #c78a48,
+    0 8px 15px rgba(0,0,0,.12);
+
+  font-size: clamp(20px, 3vw, 38px);
+  font-weight: bold;
+  text-align: center;
+}
+
+/* カード一覧 */
+.level-grid {
+  width: min(1050px, 90vw);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+
+  margin: auto;
+}
+
+/* カード共通 */
+.level-card {
+  min-width: 0;
+  padding: 16px 12px;
+
+  border: 6px solid white;
+  border-radius: 35px;
+
+  text-align: center;
+  text-decoration: none;
+  color: #70442f;
+
+  box-shadow:
+    0 7px 0 rgba(190,120,140,.18),
+    0 9px 18px rgba(0,0,0,.12);
+
+  transition: transform .15s;
+}
+
+.level-card:active {
+  transform: scale(.96);
+}
+
+/* カード色 */
+.easy {
+  background: #fff5d6;
+  outline: 4px solid #ffc958;
+}
+
+.normal {
+  background: #e3f5ff;
+  outline: 4px solid #65baff;
+}
+
+.hard {
+  background: #f3e7ff;
+  outline: 4px solid #bc81f5;
+}
+
+/* レベル名 */
+.level-name {
+  display: inline-block;
+
+  padding: 6px 24px;
+  margin-bottom: 14px;
+
+  border-radius: 40px;
+  color: white;
+
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight: bold;
+}
+
+.easy .level-name {
+  background: #ff759c;
+}
+
+.normal .level-name {
+  background: #4eb4ff;
+}
+
+.hard .level-name {
+  background: #a66bea;
+}
+
+/* パズル見本 */
+.puzzle-preview {
+  position: relative;
+
+  width: min(100%, 210px);
+  aspect-ratio: 1;
+
+  margin: 0 auto 14px;
+
+  border: 5px solid white;
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 9px rgba(0,0,0,.15);
+}
+
+.puzzle-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 分割線 */
+.puzzle-lines {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.grid-2 {
+  background-image:
+    linear-gradient(to right,
+      transparent calc(50% - 2px),
+      white calc(50% - 2px),
+      white calc(50% + 2px),
+      transparent calc(50% + 2px)),
+    linear-gradient(to bottom,
+      transparent calc(50% - 2px),
+      white calc(50% - 2px),
+      white calc(50% + 2px),
+      transparent calc(50% + 2px));
+}
+
+.grid-3 {
+  background-image:
+    linear-gradient(to right,
+      white 3px, transparent 3px),
+    linear-gradient(to bottom,
+      white 3px, transparent 3px);
+
+  background-size: 33.333% 100%, 100% 33.333%;
+  background-position: -2px 0, 0 -2px;
+}
+
+.grid-4 {
+  background-image:
+    linear-gradient(to right,
+      white 3px, transparent 3px),
+    linear-gradient(to bottom,
+      white 3px, transparent 3px);
+
+  background-size: 25% 100%, 100% 25%;
+  background-position: -2px 0, 0 -2px;
+}
+
+/* ピース数 */
+.piece-count {
+  display: inline-block;
+
+  background: white;
+  border-radius: 30px;
+
+  padding: 5px 25px;
+
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: bold;
+
+  box-shadow: 0 3px 6px rgba(0,0,0,.1);
+}
+
+/* 説明文 */
+.level-card p {
+  font-size: clamp(12px, 1.7vw, 18px);
+  font-weight: bold;
+  line-height: 1.5;
+
+  margin: 12px 0 0;
+}
+
+/* iPhone横画面 */
+@media (max-height: 600px) {
+
+  .level-page {
+    padding: 8px 4vw 15px;
+  }
+
+  .back-button {
+    top: 10px;
+    left: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 27px;
+  }
+
+  .level-title {
+    font-size: 21px;
+    padding: 7px 24px;
+    margin-bottom: 12px;
+  }
+
+  .level-grid {
+    width: min(850px, 88vw);
+    gap: 14px;
+  }
+
+  .level-card {
+    padding: 9px;
+    border-radius: 24px;
+  }
+
+  .level-name {
+    font-size: 20px;
+    padding: 4px 15px;
+    margin-bottom: 8px;
+  }
+
+  .puzzle-preview {
+    width: min(100%, 24dvh);
+    margin-bottom: 8px;
+  }
+
+  .piece-count {
+    font-size: 17px;
+    padding: 4px 15px;
+  }
+
+  .level-card p {
+    font-size: 12px;
+    margin-top: 7px;
+  }
+}
+
+/* 縦画面の場合 */
+@media (orientation: portrait) {
+  .level-grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 20px auto;
+  }
+
+  .level-title {
+    margin-top: 65px;
+  }
+}
+/* iPhone・iPad共通 */
+.level-page {
+  min-height: 100dvh;
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+.level-grid {
+  width: min(1050px, 94%);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* iPhone横画面：小さな画面に対応 */
+@media (orientation: landscape) and (max-height: 500px) {
+
+  .level-page {
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
+
+  .level-title {
+    font-size: clamp(15px, 2.5vw, 22px);
+    padding: 6px 18px;
+    margin-bottom: 12px;
+  }
+
+  .level-grid {
+    width: min(850px, 88%);
+    gap: 10px;
+  }
+
+  .level-card {
+    padding: 8px;
+    border-width: 4px;
+    border-radius: 20px;
+  }
+
+  .level-name {
+    font-size: clamp(15px, 2.5vw, 20px);
+    margin-bottom: 6px;
+  }
+
+  .puzzle-preview {
+    width: min(100%, 22dvh);
+    margin-bottom: 6px;
+  }
+
+  .piece-count {
+    font-size: 16px;
+  }
+
+  .level-card p {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+}
+
+/* iPad横画面：大きくゆったり表示 */
+@media (orientation: landscape) and (min-height: 600px) {
+
+  .level-grid {
+    width: min(1050px, 90%);
+    gap: 24px;
+  }
+
+  .level-card {
+    padding: 20px 14px;
+  }
+
+  .puzzle-preview {
+    width: min(100%, 220px);
+  }
+
+  .level-card p {
+    font-size: 18px;
+  }
+}

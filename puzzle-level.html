@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>パズルのレベル</title>
+  <link rel="stylesheet" href="puzzle-level.css">
+</head>
+
+<body>
+  <main class="level-page">
+
+    <!-- 戻るボタン -->
+    <a href="index.html" class="back-button">←</a>
+
+    <!-- タイトル -->
+    <div class="level-title">
+      🧩 むずかしさを えらんでね 🧩
+    </div>
+
+    <!-- レベル選択 -->
+    <div class="level-grid">
+
+      <!-- かんたん -->
+      <a href="puzzle-select.html?level=4"
+         class="level-card easy">
+
+        <div class="level-name">かんたん</div>
+
+        <div class="puzzle-preview">
+          <img src="images/puzzle/animal/cat.png" alt="ねこ">
+          <div class="puzzle-lines grid-2"></div>
+        </div>
+
+        <div class="piece-count">4ピース</div>
+        <p>はじめてのパズルに<br>おすすめ！ 🌱</p>
+      </a>
+
+      <!-- ふつう -->
+      <a href="puzzle-select.html?level=9"
+         class="level-card normal">
+
+        <div class="level-name">ふつう</div>
+
+        <div class="puzzle-preview">
+          <img src="images/puzzle/animal/cat.png" alt="ねこ">
+          <div class="puzzle-lines grid-3"></div>
+        </div>
+
+        <div class="piece-count">9ピース</div>
+        <p>すこし<br>チャレンジしてみよう！ ⭐⭐</p>
+      </a>
+
+      <!-- むずかしい -->
+      <a href="puzzle-select.html?level=16"
+         class="level-card hard">
+
+        <div class="level-name">むずかしい</div>
+
+        <div class="puzzle-preview">
+          <img src="images/puzzle/animal/cat.png" alt="ねこ">
+          <div class="puzzle-lines grid-4"></div>
+        </div>
+
+        <div class="piece-count">16ピース</div>
+        <p>じっくり<br>かんがえてみよう！ ⭐⭐⭐</p>
+      </a>
+
+    </div>
+  </main>
+</body>
+</html>
